@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Autorización de Descuento por Reposición - Corbeta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="formActa">
+        <div class="contenedor">
+            
+            <div class="pagina">
+                <div class="fecha-ciudad">
+                    <span>Bogotá, Día-Mes-Año:</span>
+                    <input type="text" class="corto" name="Fecha" placeholder="Ej: 15-05-2026">
+                </div>
+
+                <div class="destinatario">
+                    <p>Señores:</p>
+                    <p><b>COLOMBIANA DE COMERCIO S.A. CORBETA</b></p>
+                    <p>Ciudad.</p>
+                </div>
+
+                <div class="bloque-nomina" style="text-align: right; margin-bottom: 30px;">
+                    <span>CÓDIGO DE NÓMINA:</span>
+                    <input type="text" class="medio" name="Codigo_Nomina">
+                </div>
+
+                <p class="saludo">Apreciados Señores:</p>
+
+                <div class="cuerpo-texto">
+                    <p>
+                        Yo <input type="text" class="largo" name="Funcionario" placeholder="Nombre completo del trabajador">, 
+                        identificado(a) con Cédula de Ciudadanía No. <input type="text" class="medio" name="Cedula">; 
+                        acepto el descuento <b>por reposición de celular</b> por la suma de 
+                        $ <input type="text" class="medio" name="Suma_Descuento" placeholder="Valor en pesos">, 
+                        por lo cual autorizo ser descontado de la siguiente forma:
+                    </p>
+                    
+                    <div class="linea-input" style="margin: 15px 0;">
+                        <span>Detalle de forma de pago / cuotas:</span>
+                        <input type="text" class="gigante" name="Forma_Pago" style="width: 100%;">
+                    </div>
+
+                    <p>
+                        En caso de retiro por cualquier causa expresamente autorizo para que, de mi Liquidación Final de 
+                        Salarios, Prestaciones Legales y Extralegales, Descansos Eventuales, Indemnizaciones, y en general 
+                        de cualquier Acreencia Laboral se me descuente el valor adecuado.
+                    </p>
+
+                    <p>Agradezco su valiosa colaboración en este caso.</p>
+                </div>
+
+                <div class="datos-equipo" style="margin-top: 40px; border-top: 1px dashed #ccc; padding-top: 20px;">
+                    <div class="linea">
+                        <span>EQUIPO:</span>
+                        <input type="text" class="medio" name="MODELO">
+                    </div>
+                    <div class="linea">
+                        <span>IMEI 1:</span>
+                        <input type="text" class="largo" name="IMEI1">
+                    </div>
+                    <div class="linea" style="margin-top: 10px;">
+                        <span>IMEI 2:</span>
+                        <input type="text" class="largo" name="IMEI2">
+                    </div>
+                    <div class="linea" style="margin-top: 10px;">
+                        <span>CONCEPTO DEL DESCUENTO:</span>
+                        <input type="text" class="largo" name="Concepto_Descuento" placeholder="Ej: Pérdida / Hurto / Daño total">
+                    </div>
+                </div>
+
+                <div class="seccion-firmas" style="margin-top: 50px;">
+                    <p>Cordialmente,</p>
+                    
+                    <div class="linea-firma">
+                        <canvas id="pizarra" width="400" height="150" style="border: 1px solid #ccc; background: #fff; cursor: crosshair;"></canvas>
+                        <input type="hidden" name="firma_digital" id="Firma_Digital" class="no-print">
+                    </div>
+
+                    <div class="linea" style="margin-top: 50px;">
+                        <span>C.C No.</span>
+                        <input type="text" class="medio" name="firma_cedula">
+                    </div>
+
+                    <div class="aprobacion-rh" style="margin-top: 40px; float: right; text-align: center; border-top: 1px solid black; width: 250px; padding-top: 5px;">
+                        <p><b>APROBADO</b></p>
+                        <p style="font-size: 12px; color: #555;">Jefe Dpto. Desarrollo Humano</p>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div> </div> <div style="margin-top: 40px; text-align: center; border-top: 1px dashed #eee; padding-top: 20px;" class="no-print">
+                <button type="button" id="btnLimpiar">Borrar Firma</button>
+                <button type="submit" id="btnGuardar">Guardar e Imprimir Documento</button>
+            </div>
+
+        </div> </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

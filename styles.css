@@ -1,0 +1,135 @@
+/* Estilos Generales para la hoja de trabajo */
+body {
+    background-color: #f0f2f5; /* Fondo gris claro para que resalte la hoja */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* El contenedor que simula la hoja física de papel */
+.contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff; /* Hoja blanca */
+    padding: 50px 60px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para que parezca papel */
+    border-radius: 4px;
+}
+
+/* Formateo de párrafos y textos */
+p {
+    line-height: 1.6;
+    font-size: 15px;
+    text-align: justify; /* Texto alineado como en los contratos */
+}
+
+/* El truco mágico de las líneas para escribir (Inputs) */
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #333; /* Solo una línea abajo, como en las plantillas */
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 15px;
+    padding: 2px 5px;
+    color: #002d72; /* Color azul oscuro elegante para lo que escribas */
+    font-weight: bold;
+}
+
+/* Quitar la línea fea azul cuando haces clic para escribir */
+input[type="text"]:focus {
+    outline: none;
+    border-bottom: 2px solid #002d72;
+}
+
+/* Tamaños de los campos según la necesidad */
+.corto { width: 120px; text-align: center; }
+.medio { width: 180px; text-align: center; }
+.largo { width: 320px; }
+.gigante { width: 100%; margin-top: 5px; }
+
+/* Organización del saludo y destinatario */
+.destinatario {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.bloque-nomina {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Sección donde se dibuja la firma */
+.linea-firma {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#pizarra {
+    border: 2px dashed #999 !important; /* Línea punteada gris para saber dónde firmar */
+    border-radius: 6px;
+    background-color: #fafafa;
+    transition: background-color 0.3s;
+}
+
+#pizarra:hover {
+    background-color: #fff; /* Se pone totalmente blanco al pasar el mouse */
+}
+
+/* ========================================================== */
+/* BOTONES AJUSTADOS AL PROYECTO 1 (De borde a borde real)    */
+/* ========================================================== */
+
+/* El botón de borrar la firma (Gris neutro) */
+#btnLimpiar {
+    background-color: #002d72 !important; /* Azul oficial */
+    color: white !important;
+    border: none !important;
+    padding: 15px 0 !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    border-radius: 0px !important; /* Totalmente cuadrado */
+    cursor: pointer !important;
+    
+    /* TRUCO PARA IR DE BORDE A BORDE */
+    display: block !important;
+    width: calc(100% + 120px) !important;
+    margin: 30px -60px 0 -60px !important; /* Se pega a las orillas */
+    
+    transition: background-color 0.2s;
+}
+
+#btnLimpiar:hover {
+    background-color: #001f52 !important; /* Se oscurece al pasar el mouse */
+}
+
+/* El botón principal de Guardar (Azul Oscuro, de extremo a extremo) */
+#btnGuardar {
+    background-color: #002d72 !important; /* El azul oficial corporativo */
+    color: white !important;
+    border: none !important;
+    padding: 15px 0 !important; /* Espacio interno arriba y abajo */
+    font-size: 16px !important;
+    font-weight: bold !important;
+    border-radius: 0px !important; /* Totalmente recto en las esquinas */
+    cursor: pointer !important;
+    
+    /* EL TRUCO MÁGICO PARA IR DE BORDE A BORDE: */
+    display: block !important;
+    width: calc(100% + 120px) !important; /* Suma los 60px de margen izquierdo y derecho */
+    margin: 30px -60px -50px -60px !important; /* Jala el botón hacia los extremos y abajo */
+    
+    transition: background-color 0.2s;
+}
+
+#btnGuardar:hover {
+    background-color: #001f52 !important; /* Azul más oscuro al pasar el mouse */
+}
+
+/* REGLA DE ORO PARA EL PDF (Para cuando el script tome la foto) */
+@media print {
+    body { background-color: #fff; padding: 0; }
+    .contenedor { box-shadow: none; padding: 0; }
+    .no-print, button, #btnLimpiar, #btnGuardar { display: none !important; } /* Oculta todo en el PDF */
+}
