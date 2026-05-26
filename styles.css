@@ -92,12 +92,7 @@ input[type="text"]:focus {
     border-radius: 0px !important; /* Totalmente cuadrado */
     cursor: pointer !important;
     
-    /* TRUCO PARA IR DE BORDE A BORDE */
-    display: block !important;
-    width: calc(100% + 120px) !important;
-    margin: 30px -60px 0 -60px !important; /* Se pega a las orillas */
     
-    transition: background-color 0.2s;
 }
 
 #btnLimpiar:hover {
@@ -115,10 +110,6 @@ input[type="text"]:focus {
     border-radius: 0px !important; /* Totalmente recto en las esquinas */
     cursor: pointer !important;
     
-    /* EL TRUCO MÁGICO PARA IR DE BORDE A BORDE: */
-    display: block !important;
-    width: calc(100% + 120px) !important; /* Suma los 60px de margen izquierdo y derecho */
-    margin: 30px -60px -50px -60px !important; /* Jala el botón hacia los extremos y abajo */
     
     transition: background-color 0.2s;
 }
@@ -132,4 +123,32 @@ input[type="text"]:focus {
     body { background-color: #fff; padding: 0; }
     .contenedor { box-shadow: none; padding: 0; }
     .no-print, button, #btnLimpiar, #btnGuardar { display: none !important; } /* Oculta todo en el PDF */
+}
+/* Esta es la clase que ahora controla al div que acabamos de modificar */
+.contenedor-botones {
+    max-width: 820px;         /* Limita el ancho para que sea igual al Proyecto 1 */
+    margin: 40px auto 0 auto; /* Centra la caja en la hoja y la separa de las firmas */
+    display: flex;
+    flex-direction: column;   /* Pone un botón debajo del otro */
+    gap: 12px;                /* Deja un espacio limpio entre los dos botones */
+    border-top: 1px dashed #eee; /* Mantiene la línea punteada sutil que tenías arriba */
+    padding-top: 20px;
+}
+
+/* Este estilo le da tu toque corporativo a ambos botones */
+.contenedor-botones button {
+    width: 100% !important;   /* Ahora el 100% se acopla a los 420px de la caja */
+    background-color: #002d72 !important; /* Tu azul oficial */
+    color: white !important;
+    border: none !important;
+    padding: 15px 0 !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    border-radius: 0px !important; /* Totalmente cuadrados */
+    cursor: pointer !important;
+}
+
+/* Efecto visual cuando pasas el mouse (Opcional pero se ve pro) */
+.contenedor-botones button:hover {
+    background-color: #001f54 !important;
 }
